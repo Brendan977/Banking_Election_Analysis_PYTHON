@@ -33,12 +33,19 @@ with open(csv_path) as csvfile:
     print("-----------------------------------")
     candidates_set = set(candidates_full)
     candidates_list = (list(candidates_set))
-    print(candidates_list)
-    print(f'{candidates_list[0]}: {len(vote_3)}')
-    print(f'{candidates_list[1]}: {len(vote_1)}')
-    print(f'{candidates_list[2]}: {len(vote_2)}')
 
+    print(f'{candidates_list[0]}: {len(vote_1)}')
+    print(f'{candidates_list[1]}: {len(vote_2)}')
+    print(f'{candidates_list[2]}: {len(vote_3)}')
+
+t = f'Total Votes: {len(total_votes)}'
+c1 = f'{candidates_list[0]}: {len(vote_3)}'
+c2 = f'{candidates_list[1]}: {len(vote_1)}'
+c3 = f'{candidates_list[2]}: {len(vote_2)}'
 output_file = os.path.join('analysis', 'pypoll_result.csv')
 
 with open(output_file, "w") as datafile:
-    datafile.write()
+    datafile.write(t)
+    datafile.write(c1)
+    datafile.write(c2)
+    datafile.write(c3)
