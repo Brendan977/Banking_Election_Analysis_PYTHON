@@ -38,6 +38,26 @@ with open(csv_path) as csvfile:
     print(f'Greatest Increase in Profits: ${increase}')
     print(f'Greatest Decrease in Profits: ${decrease}')
 
+    m = f'Total Months: {len(months)}'
+    t= f'Total: ${sum(net_total)}'
+    c= f'Average Change: ${round(avg_change, 2)}'
+    i= f'Greatest Increase in Profits: ${increase}'
+    d= f'Greatest Decrease in Profits: ${decrease}'
+
+
+output_file = os.path.join('analysis', 'pybank_result.csv')
+
+with open(output_file, "w") as datafile:
+    
+    datafile.write(m)
+    datafile.write(t)
+    datafile.write(c)
+    datafile.write(i)
+    datafile.write(d)
+
+  
+
+
 
   
         
